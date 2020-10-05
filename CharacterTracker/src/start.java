@@ -10,7 +10,7 @@ public class start {
 	static NPCHelper NH = new NPCHelper();
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		//  Auto-generated method stub
 		runMenu();
 	}
 
@@ -50,7 +50,7 @@ public class start {
 	}
 	
 	private static void viewList() {
-		// TODO Auto-generated method stub
+		//  Auto-generated method stub
 		List<NPC> allNPCS = NH.getAll();
 		for(NPC single : allNPCS) {
 			System.out.println(single.getId() + ": " + single.Describe());
@@ -58,7 +58,7 @@ public class start {
 	}
 
 	private static void delete() {
-		// TODO Auto-generated method stub
+		//  Auto-generated method stub
 		System.out.println("How would you like to search?");
 		System.out.println("*  1. -- Search by name");
 		System.out.println("*  2. -- Search by race");
@@ -96,7 +96,7 @@ public class start {
 	}
 
 	private static void edit() {
-		// TODO Auto-generated method stub
+		//  Auto-generated method stub
 		System.out.println("How would you like to search?");
 		System.out.println("*  1. -- Search by name");
 		System.out.println("*  2. -- Search by race");

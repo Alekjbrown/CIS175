@@ -28,7 +28,7 @@ public class NPC {
 	//constructors
 	public NPC() {
 		super();
-		// TODO Auto-generated constructor stub
+		//  Auto-generated constructor stub
 	}
 	public NPC(String name, String race, int age) {
 		super();
