@@ -1,0 +1,33 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql5-17500d84491-8a4a2360b7ddc18": {
+			"provider": "mysql",
+			"driver": "mysql5",
+			"name": "npcs",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "cis175.cwltlhjmdibf.us-east-1.rds.amazonaws.com",
+				"port": "3306",
+				"database": "npcs",
+				"url": "jdbc:mysql://cis175.cwltlhjmdibf.us-east-1.rds.amazonaws.com:3306/npcs",
+				"home": "/usr",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
