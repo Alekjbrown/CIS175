@@ -3,6 +3,8 @@
 	<persistence-unit name="CharacterTracker" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.NPC</class>
+		<class>model.StatBlock</class>
+		<class>model.NPCDetails</class>
 		<class>controller.LocalDateAttributeConverter</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.cwltlhjmdibf.us-east-1.rds.amazonaws.com/npcs"/>

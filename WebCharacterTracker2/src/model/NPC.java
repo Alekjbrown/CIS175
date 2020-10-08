@@ -67,5 +67,10 @@ public class NPC {
 		String output = getName() + " is a " + getAge() + " Y/O " + getRace();
 		return output;
 	}
+	@Override
+	public String toString() {
+		return "NPC [id=" + id + ", name=" + name + ", race=" + race + ", age=" + age + "]";
+	}
+	
 	
 }

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -21,10 +22,10 @@ public class NPCDetails {
 	@Column(name="CREATED_DATE")
 	private LocalDate createdDate;
 	@OneToOne(cascade = CascadeType.MERGE)
-	@Column(name="NPC_ID")
+	@JoinColumn(name="NPC_ID")
 	private NPC npc;
-	@OneToOne(cascade = CascadeType.MERGE)
-	@Column(name="STATBLOCK_ID")
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="STATBLOCK_ID")
 	private StatBlock statblock;
 	
 	//constructors
