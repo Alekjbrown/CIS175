@@ -21,10 +21,9 @@ public class NPCDetails {
 	private int id;
 	@Column(name="CREATED_DATE")
 	private LocalDate createdDate;
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="NPC_ID")
 	private NPC npc;
-	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="STATBLOCK_ID")
 	private StatBlock statblock;
 	

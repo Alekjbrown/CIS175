@@ -17,8 +17,6 @@ public class StatTester {
 		
 		StatBlockHelper sbh = new StatBlockHelper();
 		
-		sbh.insertStatBlock(barbarian);
-		
 		NPCDetailsHelper ndh = new NPCDetailsHelper();
 		NPCDetails barbBlock = new NPCDetails(LocalDate.now(),bob,barbarian);
 		
