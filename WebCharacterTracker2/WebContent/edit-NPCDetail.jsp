@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>New NPC Detail</title>
+<title>Edit Detail</title>
 </head>
 <body>
-	<form action="createNewNPCServlet" method="post">
-		Name: <input type="text" name="npcName"><br> Race: <input
-			type="text" name="npcRace"><br> Age: <input
-			type="number" name="npcAge"><br> <Select
-			name="statblockToAdd">
+	<form action="editNPCDetailServlet" method="post">
+		<input type="hidden" name="id" value="${NPCToEdit.id}">
+		Name: <input type="text" name="name" value="${NPCToEdit.npc.name}"><br> 
+		Race: <input type="text" name="race" value="${NPCToEdit.npc.race}"><br>
+		Age: <input	type="number" name="age" value="${NPCToEdit.npc.age }"><br> 
+		<Select	name="statblockToAdd">
 			<c:forEach items="${requestScope.allStatblocks}" var="currentBlock">
 				<option value="${currentBlock.id}">
 					<table>
@@ -40,8 +41,8 @@
 					</table>
 				</option>
 			</c:forEach>
-		</Select> <input type="submit" value="Create NPC and Add Statblock">
+		</Select><br> 
+		<input type="submit" value="Save NPC and Add Statblock">
 	</form>
-	<a href="index.html">Go Home</a>
 </body>
 </html>

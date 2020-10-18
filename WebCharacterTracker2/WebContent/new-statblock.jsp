@@ -10,16 +10,15 @@
 <body>
 	<h1>Add New Statblock</h1>
 	<form action="addStatblockServlet" method="post">
-		Strength: <input type="number" name="npcStrength"><br>
-		Dexterity: <input type="number" name="npcDexterity"><br>
-		Constitution: <input type="number" name="npcConstitution"><br>
-		Intelligence: <input type="number" name="npcIntelligence"><br>
-		Wisdom: <input type="number" name="npcWisdom"><br>
-		Charisma: <input type="number" name="npcCharisma"><br>
+		Strength: <input type="number" name="strength"><br>
+		Dexterity: <input type="number" name="dexterity"><br>
+		Constitution: <input type="number" name="constitution"><br>
+		Intelligence: <input type="number" name="intelligence"><br>
+		Wisdom: <input type="number" name="wisdom"><br>
+		Charisma: <input type="number" name="charisma"><br>
+		<input type="submit" value="Save New">
 	</form>
 	<br>
-	<form action="index.html">
-		<input type="submit" value="Home">
-	</form>
+	<button onclick="window.location.href='index.html'">Home</button>
 </body>
 </html>

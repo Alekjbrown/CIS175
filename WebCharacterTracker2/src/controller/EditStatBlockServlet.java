@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import model.StatBlock;
 
 /**
- * Servlet implementation class AddStatblockServlet
+ * Servlet implementation class EditStatBlockServlet
  */
-@WebServlet("/addStatblockServlet")
-public class AddStatblockServlet extends HttpServlet {
+@WebServlet("/editStatBlockServlet")
+public class EditStatBlockServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddStatblockServlet() {
+    public EditStatBlockServlet() {
         super();
         //  Auto-generated constructor stub
     }
@@ -37,6 +37,10 @@ public class AddStatblockServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//  Auto-generated method stub
+		StatBlockHelper dao = new StatBlockHelper();
+		
+		Integer tempId = Integer.parseInt(request.getParameter("id"));
+		
 		int strength = Integer.parseInt(request.getParameter("strength"));
 		int dexterity = Integer.parseInt(request.getParameter("dexterity"));
 		int constitution = Integer.parseInt(request.getParameter("constitution"));
@@ -44,12 +48,17 @@ public class AddStatblockServlet extends HttpServlet {
 		int wisdom = Integer.parseInt(request.getParameter("wisdom"));
 		int charisma = Integer.parseInt(request.getParameter("charisma"));
 		
-		StatBlock stat = new StatBlock(strength,dexterity,constitution,intelligence,wisdom,charisma);
-		StatBlockHelper dao = new StatBlockHelper();
-		dao.insertStatBlock(stat);
+		StatBlock statBlockToEdit = dao.searchById(tempId);
+		statBlockToEdit.setStrength(strength);
+		statBlockToEdit.setDexterity(dexterity);
+		statBlockToEdit.setConstitution(constitution);
+		statBlockToEdit.setIntelligence(intelligence);
+		statBlockToEdit.setWisdom(wisdom);
+		statBlockToEdit.setCharisma(charisma);
 		
-		//send back to add another
-		getServletContext().getRequestDispatcher("/new-statblock.jsp").forward(request, response);
+		dao.update(statBlockToEdit);
+		
+		getServletContext().getRequestDispatcher("/viewAllStatblocksServlet").forward(request, response);
 		
 	}
 

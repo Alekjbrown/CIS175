@@ -29,9 +29,9 @@ public class AddNPCDetailServlet extends HttpServlet {
 		//  Auto-generated method stub
 		StatBlockHelper sbh = new StatBlockHelper();
 		
-		request.setAttribute("allStatblocks", sbh.showAllStatBlocks());
+		request.setAttribute("allStatblocks", sbh.getAll());
 		
-		if(sbh.showAllStatBlocks().isEmpty()) {
+		if(sbh.getAll().isEmpty()) {
 			request.setAttribute("allStatblocks", " ");
 		}
 		
